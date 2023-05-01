@@ -1,13 +1,164 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Custom Fonts */
+@font-face {
+  font-family: "Kanit Light";
+  src: url("./assets/fonts/Kanit-Light.woff2") format("woff2"),
+    url("./assets/fonts/Kanit-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Kanit Bold";
+  src: url("./assets/fonts/Kanit-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Kanit-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Minion Pro";
+  src: url("./assets/fonts/MinionPro-Regular.woff2") format("woff2"),
+    url("./assets/fonts/MinionPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kanit Black";
+  src: url("./assets/fonts/Kanit-Black.woff2") format("woff2"),
+    url("./assets/fonts/Kanit-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PF Highway Sans Pro";
+  src: url("./assets/fonts/PFHighwaySansPro-Thin.woff2") format("woff2"),
+    url("./assets/fonts/PFHighwaySansPro-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+/* End */
+
+:root {
+  /* Colors */
+  --white: #ffffff;
+  --white-50: #ebecec;
+  --green: #00a77b;
+  --dark-blue: #1c2636;
+
+  /* fonts  */
+  --boldFont: "Kanit Bold";
+  --headingFont: "Kanit Black";
+  --bodyFont: "Kanit Light";
+  --pfHighwaySansPro: "PF Highway Sans Pro";
+}
+
+/* Typograpy */
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+}
+body {
+  font-family: var(--bodyFont);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 24px;
+  background: var(--white);
+  position: relative;
+  z-index: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headingFont);
+  font-weight: 900;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+strong {
+  font-family: var(--boldFont);
+}
+p {
+  color: var(--dark-blue);
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.btn {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-blue);
+  color: var(--green);
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: var(--headingFont);
+  position: relative;
+  padding-right: 10px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(./assets/img/arrow-right.png) no-repeat center center;
+  width: 11px;
+  height: 24px;
+}
+.not-found-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: 20px;
+}
+/* Media Query */
+@media (min-width: 668px) {
+  body {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .btn {
+    width: 214px;
+    font-size: 18px;
+    padding-right: 15px;
+  }
+}
+/* End */
